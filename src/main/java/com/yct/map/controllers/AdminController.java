@@ -19,7 +19,6 @@ import com.yct.map.models.UserDetails;
 import com.yct.map.services.AdminService;
 import com.yct.map.services.SearchService;
 
-import jdk.internal.org.jline.utils.Log;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
