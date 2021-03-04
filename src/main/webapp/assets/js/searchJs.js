@@ -353,9 +353,12 @@ function buildStartingPointDataList($arrOfLocations) {
 		$dropDownHtml = `<div class="dropdown-menu">{DROPDOWN_ITEM}</div>`;
 		$newOption = "";
 		$.each($arrOfLocations, function(index, vall) {
-			$locationObj = vall["location"];
+			$locationObj = vall;
 			if ($.isArray($locationObj) && $locationObj.length > 0) {
 				$newOption += `<a class="dropdown-item startingPointVal" latitude="` + $locationObj[0]["latitude"] + `" longitude="` + $locationObj[0]["longitude"] + `" id="` + vall["name"] + `"><i class="fas fa-map-marker-alt" id="locIcons"></i>` + vall["name"] + `</a>`;
+				$('#startingpointListDiv').html($dropDownHtml.replace("{DROPDOWN_ITEM}", $newOption));
+			}else{
+				$newOption += `<a class="dropdown-item startingPointVal" latitude="` + $locationObj["latitude"] + `" longitude="` + $locationObj["longitude"] + `" id="` + vall["name"] + `"><i class="fas fa-map-marker-alt" id="locIcons"></i>` + vall["name"] + `</a>`;
 				$('#startingpointListDiv').html($dropDownHtml.replace("{DROPDOWN_ITEM}", $newOption));
 			}
 		});
