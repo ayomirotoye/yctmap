@@ -42,7 +42,7 @@ function removeMarker() {
 }
 
 function locateCoordinates(location) {
-	console.log("map", map);
+	//console.log("map", map);
 	addMarker(location, map);
 }
 
@@ -60,7 +60,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 			startingpointLong: $startingPoint.lng
 		}
 		var distance = haversine_distance(distanceCalcObj);
-		console.log("THE DISTANCE IS :::", distance);
+		//console.log("THE DISTANCE IS :::", distance);
 		if (checkNullThenReturnDefinedString(distance, "") !== "" && distance > 0) {
 			//map.setCenter($startingPoint);
 			directionsService.route({
@@ -168,12 +168,12 @@ function initMap() {
 		if (y > maxY) y = maxY;
 
 		map.setCenter(new google.maps.LatLng(y, x));
-	});
+	}, { passive: true });
 
 	// Limit the zoom level
 	google.maps.event.addListener(map, 'zoom_changed', function() {
 		if (map.getZoom() < minZoomLevel) map.setZoom(minZoomLevel);
-	});
+	}, { passive: true });
 	/*var rendererOptions = {
 		map: map,
 		suppressMarker: true,
@@ -313,7 +313,6 @@ function buildDataList($arrOfLocations) {
 	try{
 		$locationList = $('#locationListDiv').html();
 		$input = document.getElementById('yourDestination');
-		console.log("l;kmnjbhj::", $arrOfLocations);
 		if ($arrOfLocations == null) {
 			$addNewOpt = `Add a missing place`;
 			if (true) {
@@ -429,7 +428,6 @@ function showNavigation(theLocLat, theLocLong) {
 	const loc = { lat: Number(theLocLat), lng: Number(theLocLong) };
 	locateCoordinates(loc);
 	$str = $('#yourDestination').val();
-	console.log("YOUR DESTINATION IS:::", $str);
 	$("#endPoint").val($str);
 	$("#searchPlaceDiv").css({ display: 'block' });
 	$("#startBtn").removeAttr("disabled");
@@ -442,8 +440,6 @@ $(document).on('click', '#getDirectionBtn', function() {
 		//$("#getDirectionBtn").removeAttr("disabled");
 		$('#endpointLat').val();
 		$('#endpointLong').val();
-		console.log("LATITUDE:::", $('#endpointLat').val());
-		console.log("LONGITUDE:::", $('#endpointLong').val());
 		showNavigation(checkNullThenReturnDefinedString($('#endpointLat').val(), ""),
 			checkNullThenReturnDefinedString($('#endpointLong').val(), ""));
 
@@ -464,7 +460,6 @@ function searchDivOperation(actionType) {
 
 $(document).on('change', '#modeOfTravel', function() {
 	$modeOfTravelVal = $("#modeOfTravel").val();
-	console.log("MODE OF TRAVEL:::", $modeOfTravelVal)
 	if ($modeOfTravelVal === "WALKING") {
 		$("#modeOfTravelIcon").html(`<i class="fas fa-walking"></i>`);
 	} else if ($modeOfTravelVal === "DRIVING") {
