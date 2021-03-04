@@ -1,54 +1,41 @@
 $(document).on('click', '#doLoginBtn', function(event) {
+	$dataToSend = {
+		username: $("#username").val(),
+		password: $("#password").val()
+	}
 	$.ajax({
 		type: "POST",
-		url: $baseUrl + "/login",
+		url: $baseUrl + "/admin/login",
 		data: JSON.stringify($dataToSend),
 		contentType: "application/json",
 		beforeSend: function() {
-			loadingAlert(20000, null, "... Sending Reference ...")
+			toggleElementVisibility({ state: "HIDE", selector: "#loginModalFooterDiv" });
+			$(".alertDiv").html(displayAlert("LOADING", `Submitting ...`));
 		},
 		success: function(result) {
-			$responseCode = checkNullThenReturnDefinedString(result, "") !== "" ? result.responseCode : "";
+			$responseCode = checkNullThenReturnDefinedString(result, "") !== "" ? result.code : "";
 			if ($responseCode !== "" && $responseCode === "00") {
-				showAlert({
-					type: "success",
-					icon: "success",
-					title: "Success",
-					html: uiMessages.COMPANY_EMAIL_VALIDATION_CODE_SENT,
-					confirmButtonText: "Close"
-				});
+				$(".alertDiv").html(displayAlert("SUCCESS", "Cool! Logged in"));
+				sessionStorage.setItem("isLoggedIn", true);
+				setTimeout(() => {
+					window.location = $baseUrl + "/admin/dashboard";
+				}, 3000);
 			} else {
-				Swal.fire({
-					icon: "error",
-					title: "Ooops ! An error occurred",
-					html: uiMessages.COMPANY_EMAIL_VALIDATION_CODE_FAILED,
-					confirmButtonText: "Resend",
-					denyButtonText: "Close",
-					showCancelButton: true,
-					confirmButtonColor: '#3085d6',
-					cancelButtonColor: '#d33',
-				}).then((result) => {
-					if (result.isConfirmed) {
-						sendCompanyEmailValidationCode();
-					} else {
-						Swal.close();
-					}
-				});
+				$(".alertDiv").html(displayAlert("FAIL", "Ooops! Please check your details"));
+				toggleElementVisibility({ state: "SHOW", selector: "#loginModalFooterDiv" });
 			}
-
 		},
 		complete: function() {
-
+			//toggleElementVisibility({ state: "SHOW", selector: "#loginModalFooterDiv" });
 		},
 		error: function(err) {
 			console.log("ERROR OCCURRED:::", err);
-			showAlert({
-				type: "error",
-				icon: "error",
-				title: "error",
-				html: uiMessages.COMPANY_EMAIL_VALIDATION_CODE_FAILED,
-				confirmButtonText: "Close"
-			});
+			$(".alertDiv").html(displayAlert("FAIL", "Ooops! Please check your details"));
+			toggleElementVisibility({ state: "SHOW", selector: "#loginModalFooterDiv" });
 		}
 	});
-});	
+});
+
+$(document).on('click', '#logoutBtn', function(e) {
+	window.location = $baseUrl + "/index";
+});

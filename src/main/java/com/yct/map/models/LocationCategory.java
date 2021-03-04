@@ -13,6 +13,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class LocationCategory{
 	public String code;
+	public String categoryName;
+	public String description;
+	public Long id;
 	public String message;
 	public List<Category> data;
 }

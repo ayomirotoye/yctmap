@@ -22,10 +22,10 @@ public class HomeController {
 	public String index() {
 		return "index";
 	}
-
-	@GetMapping("/admin/dashboard")
-	public String adminDashboard() {
-		return "admin-dashboard";
+	
+	@GetMapping("/index")
+	public String index2() {
+		return "index";
 	}
 
 	@GetMapping("/sublocations/find")
@@ -38,9 +38,9 @@ public class HomeController {
 		return new ResponseEntity<>(searchService.getLocations(), HttpStatus.OK);
 	}
 
-	@PostMapping("/locations")
-	public ResponseEntity<?> addLocation(@RequestBody Location newLoc) {
-		return new ResponseEntity<>(searchService.addLocation(newLoc), HttpStatus.OK);
+	@PostMapping("/sublocations/add")
+	public ResponseEntity<?> addSubLocation(@RequestBody Location newLoc) {
+		return new ResponseEntity<>(searchService.addSubLocation(newLoc), HttpStatus.OK);
 	}
 
 	@GetMapping("/location-category")

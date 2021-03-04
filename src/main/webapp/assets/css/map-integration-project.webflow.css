@@ -18,9 +18,9 @@ body {
 .loginimagecolumn {
 	height: 100%;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)),
-		to(rgba(0, 0, 0, 0.5))), url('../images/yabatech-e1581272516850.jpg');
+		to(rgba(0, 0, 0, 0.5))), url('../images/yabatech1.jpeg');
 	background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5),
-		rgba(0, 0, 0, 0.5)), url('../images/yabatech-e1581272516850.jpg');
+		rgba(0, 0, 0, 0.5)), url('../images/yabatech1.jpeg');
 	background-position: 0px 0px, 0% 50%;
 	background-size: auto, cover;
 	background-repeat: repeat, no-repeat;
@@ -42,7 +42,7 @@ body {
 	width: 100%;
 	height: 48px;
 	border-radius: 4px;
-	background-color: #00903f;
+	background-color: #3D553F;
 	-webkit-transition: all 500ms ease;
 	transition: all 500ms ease;
 	font-weight: 600;
@@ -116,9 +116,9 @@ body {
 	padding-right: 24px;
 	padding-left: 24px;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 34, 28,
-		0.8)), to(#343d34)), url('../images/yabatech-e1581272516850.jpg');
+		0.8)), to(#343d34)), url('../images/yabatech1.jpeg');
 	background-image: linear-gradient(180deg, rgba(20, 34, 28, 0.8), #343d34),
-		url('../images/yabatech-e1581272516850.jpg');
+		url('../images/yabatech1.jpeg');
 	background-position: 0px 0px, 0% 50%;
 	background-size: auto, cover;
 	background-repeat: repeat, no-repeat;
@@ -274,7 +274,7 @@ body {
 	padding-top: 14px;
 	padding-bottom: 14px; */
 	border-radius: 4px;
-	background-color: #00903f;
+	background-color: #3D553F;
 	-webkit-transition: all 500ms ease;
 	transition: all 500ms ease;
 	font-weight: 600;
@@ -377,9 +377,9 @@ body {
 	height: 16%;
 	border-radius: 8px;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.61)),
-		to(rgba(0, 0, 0, 0.61))), url('../images/yabatech-e1581272516850.jpg');
+		to(rgba(0, 0, 0, 0.61))), url('../images/yabatech1.jpeg');
 	background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.61),
-		rgba(0, 0, 0, 0.61)), url('../images/yabatech-e1581272516850.jpg');
+		rgba(0, 0, 0, 0.61)), url('../images/yabatech1.jpeg');
 	background-position: 0px 0px, 0px 0px;
 	background-size: auto, cover;
 }
@@ -446,7 +446,7 @@ body {
 
 .link-block {
 	width: 100px;
-	margin-bottom: 32px;
+	/*margin-bottom: 32px;  */
 	padding-top: 19px;
 	border-bottom: 1px solid #364a38;
 	border-radius: 4px;
@@ -542,7 +542,7 @@ body {
 
 .italic-text-4 {
 	font-family: 'Material design iconic font', sans-serif;
-	color: #00903f;
+	color: #3D553F;
 	font-size: 110px;
 	font-style: normal;
 }
@@ -650,7 +650,7 @@ body {
 	height: 37.99768829345703px;
 	border-top-right-radius: 8px;
 	border-bottom-right-radius: 8px;
-	background-color: #00903f;
+	background-color: #3D553F;
 }
 
 .div-block-2 {
@@ -814,9 +814,9 @@ body {
 .tab-link-tab-1.w--current {
 	padding-top: 16px;
 	padding-bottom: 16px;
-	border-bottom: 3px solid #00903f;
+	border-bottom: 3px solid #3D553F;
 	background-color: transparent;
-	color: #00903f;
+	color: #3D553F;
 }
 
 .tab-link-tab-2 {
@@ -824,7 +824,7 @@ body {
 	padding-bottom: 16px;
 	border-style: none none solid;
 	border-width: 1px 1px 3px;
-	border-color: #000 #000 #00903f;
+	border-color: #000 #000 #3D553F;
 	background-color: transparent;
 	color: #818181;
 	font-weight: 300;
@@ -832,7 +832,7 @@ body {
 
 .tab-link-tab-2.w--current {
 	background-color: transparent;
-	color: #00903f;
+	color: #3D553F;
 }
 
 .tablediv {
@@ -854,7 +854,7 @@ body {
 	padding-top: 14px;
 	padding-bottom: 14px;
 	border-radius: 4px;
-	background-color: #00903f;
+	background-color: #3D553F;
 	-webkit-transition: all 500ms ease;
 	transition: all 500ms ease;
 	font-weight: 600;
@@ -889,7 +889,7 @@ body {
 	height: 48px;
 	margin-bottom: 56px;
 	border-radius: 4px;
-	background-color: #00903f;
+	background-color: #3D553F;
 	-webkit-transition: all 500ms ease;
 	transition: all 500ms ease;
 	font-weight: 600;
@@ -923,7 +923,7 @@ body {
 
 .italic-text-8 {
 	font-family: 'Material design iconic font', sans-serif;
-	color: #00903f;
+	color: #3D553F;
 	font-size: 110px;
 	font-style: normal;
 }
@@ -969,7 +969,7 @@ body {
 .search-button-2 {
 	border-top-right-radius: 4px;
 	border-bottom-right-radius: 4px;
-	background-color: #00903f;
+	background-color: #3D553F;
 	-webkit-transition: all 400ms ease;
 	transition: all 400ms ease;
 }

@@ -7,10 +7,9 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class GenericResponse {
-	private String code;
-	private String message;
-	private Object data;
+@NoArgsConstructor
+public class UserDetails {
+	private String username;
+	private String password;
 }

@@ -60,9 +60,18 @@ function validator(formElements) {
 
 function errorResponseMap() {
 	var errorRes = new Map();
-	errorRes.set("description", "Description can not be empty");
-	errorRes.set("name", "name can not be empty");
+	errorRes.set("locationDescription", "Description can not be empty");
+	errorRes.set("locationName", "name can not be empty");
 	errorRes.set("locationSelect", "Location option must be provided");
+	
+	errorRes.set("addLocationName", "Location name must be provided");
+	errorRes.set("addLocationDescription", "Location description must be provided");
+	errorRes.set("addLocationLatitude", "Location latitude must be provided");
+	errorRes.set("addLocationLongitude", "Location longitude must be provided");
+	errorRes.set("addLocationCategories", "Location categories must be provided");
+	
+	errorRes.set("addLocationCategoryDescription", "Location category description must be provided");
+	errorRes.set("addLocationCategoryName", "Location category name must be provided");
 
 	return errorRes;
 }

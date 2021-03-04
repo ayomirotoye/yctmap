@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html>
 <%@include file="header.jsp"%>
-
 <body>
 	<div class="div-block-5">
 		<header>
@@ -48,7 +47,7 @@
 								</div>
 							</form>
 						</div>
-						<div class="mx-2 mt-30px" id=>
+						<div class="mx-2 mt-30px" id="">
 							<!-- <button id="showExplorePlacesBtn"
 								class="primarybutton w-button btn" style="width: 100%">
 								<i class="fas fa-paper-plane"></i> Explore
@@ -58,11 +57,15 @@
 								<i class="fab fa-wpexplorer"></i> Explore
 							</button> -->
 						</div>
-						<div class="mx-2 mt-30px" id=>
+						<div class="mx-2 mt-30px" id="isLoggedInDiv">
 							<button id="showLoginBtn" class="primarybutton w-button btn"
 								style="width: 100%">
 								<i class="fas fa-paper-plane"></i> Login
 							</button>
+							<!-- <button id="showLoginBtn" class="primarybutton w-button btn"
+								style="width: 100%">
+								<i class="fas fa-paper-plane"></i> Go to Dashboard
+							</button> -->
 						</div>
 					</div>
 				</div>

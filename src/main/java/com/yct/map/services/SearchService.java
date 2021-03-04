@@ -64,12 +64,12 @@ public class SearchService {
 		return res;
 	}
 
-	public GenericResponse addLocation(Location location) {
-		GenericResponse res = GenericResponse.builder().build();
+	public LocationCategory getLocationCategories() {
+		LocationCategory res = LocationCategory.builder().build();
 		try {
-			String url = env.getProperty("add.sublocations");
-			HttpEntity<Location> newLoc = new HttpEntity<>(location);
-			ResponseEntity<String> response = apiService.restTemplate().exchange(url, HttpMethod.POST, newLoc,
+			String url = env.getProperty("locations.by-category");
+
+			ResponseEntity<String> response = apiService.restTemplate().exchange(url, HttpMethod.GET, null,
 					String.class);
 
 			log.info("RESPONSE FROM SERVICE:::" + response);
@@ -84,12 +84,13 @@ public class SearchService {
 		return res;
 	}
 
-	public LocationCategory getLocationCategories() {
-		LocationCategory res = LocationCategory.builder().build();
+	public GenericResponse addSubLocation(Location location) {
+		GenericResponse res = GenericResponse.builder().build();
 		try {
-			String url = env.getProperty("locations.by-category");
+			String url = env.getProperty("add.sublocations");
 
-			ResponseEntity<String> response = apiService.restTemplate().exchange(url, HttpMethod.GET, null,
+			HttpEntity<Location> newLoc = new HttpEntity<>(location);
+			ResponseEntity<String> response = apiService.restTemplate().exchange(url, HttpMethod.POST, newLoc,
 					String.class);
 
 			log.info("RESPONSE FROM SERVICE:::" + response);

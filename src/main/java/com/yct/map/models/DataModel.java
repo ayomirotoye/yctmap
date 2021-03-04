@@ -11,7 +11,6 @@ public class DataModel {
 	private int id;
 	private Object name;
 	private Object description;
-	private List<Location> location;
 	private String approvedBy;
 	private boolean approved;
 	private int longitude;
