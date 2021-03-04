@@ -310,25 +310,34 @@ function findLocationForStartingPoint() {
 }
 
 function buildDataList($arrOfLocations) {
-	$locationList = $('#locationListDiv').html();
-	$input = document.getElementById('yourDestination');
-	if ($arrOfLocations == null) {
-		$addNewOpt = `Add a missing place`;
-		if (true) {
-			$('#locationListDiv').html(`<div class="card" id="addMissingPlaceDiv" "> 
-			<button class="btn customLinks" type="button" data-target="#addMissingPlaceModal" data-toggle="modal"><i class="fas fa-plus"></i>` + $addNewOpt + `</button></div>`);
-		}
-	} else {
-		$dropDownHtml = `<div class="dropdown-menu">{DROPDOWN_ITEM}</div>`;
-		$newOption = "";
-		$.each($arrOfLocations, function(index, vall) {
-			$locationObj = vall["location"];
-			if ($.isArray($locationObj) && $locationObj.length > 0) {
-				$newOption += `<a class="dropdown-item locationVal" latitude="` + $locationObj[0]["latitude"] + `" longitude="` + $locationObj[0]["longitude"] + `" id="` + vall["name"] + `"><i class="fas fa-map-marker-alt" id="locIcons"></i>` + vall["name"] + `</a>`;
-				$('#locationListDiv').html($dropDownHtml.replace("{DROPDOWN_ITEM}", $newOption));
+	try{
+		$locationList = $('#locationListDiv').html();
+		$input = document.getElementById('yourDestination');
+		console.log("l;kmnjbhj::", $arrOfLocations);
+		if ($arrOfLocations == null) {
+			$addNewOpt = `Add a missing place`;
+			if (true) {
+				$('#locationListDiv').html(`<div class="card" id="addMissingPlaceDiv" "> 
+				<button class="btn customLinks" type="button" data-target="#addMissingPlaceModal" data-toggle="modal"><i class="fas fa-plus"></i>` + $addNewOpt + `</button></div>`);
 			}
-		});
+		} else {
+			$dropDownHtml = `<div class="dropdown-menu">{DROPDOWN_ITEM}</div>`;
+			$newOption = "";
+			$.each($arrOfLocations, function(index, vall) {
+				$locationObj = vall;
+				if ($.isArray($locationObj) && $locationObj.length > 0) {
+					$newOption += `<a class="dropdown-item locationVal" latitude="` + $locationObj[0]["latitude"] + `" longitude="` + $locationObj[0]["longitude"] + `" id="` + vall["name"] + `"><i class="fas fa-map-marker-alt" id="locIcons"></i>` + vall["name"] + `</a>`;
+					$('#locationListDiv').html($dropDownHtml.replace("{DROPDOWN_ITEM}", $newOption));
+				}else{
+					$newOption += `<a class="dropdown-item locationVal" latitude="` + $locationObj["latitude"] + `" longitude="` + $locationObj["longitude"] + `" id="` + vall["name"] + `"><i class="fas fa-map-marker-alt" id="locIcons"></i>` + vall["name"] + `</a>`;
+					$('#locationListDiv').html($dropDownHtml.replace("{DROPDOWN_ITEM}", $newOption));
+				}
+			});
+		}
+	}catch(err){
+		console.log("ERROR OCCURRED:::", err);
 	}
+	
 }
 
 function buildStartingPointDataList($arrOfLocations) {
