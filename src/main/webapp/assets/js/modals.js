@@ -5,7 +5,7 @@ $(document).ready(function() {
 		$('.modal-backdrop').remove();//REMOVE THE BACKDROP CLASS
 	});
 	$(document).on('click', '#showLoginBtn', function(event) {
-		$('#loginModal').show();
+		$('#loginModal').modal('show');
 	});
 
 	$(document).on('shown.bs.modal', '#explorePlacesModal', function(e) {

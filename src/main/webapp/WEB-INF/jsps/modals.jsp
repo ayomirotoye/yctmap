@@ -1,4 +1,4 @@
-<div id="loginModal" class="modal" tabindex="-1">
+<div class="modal" id="loginModal"  role="dialog">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
